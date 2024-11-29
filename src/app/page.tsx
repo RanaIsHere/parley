@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css";
 
@@ -6,7 +7,7 @@ export default function Landing() {
 		<div className={styles.page}>
 			<nav className={styles.nav}>
 				<p>Parley</p>
-				<button>Login</button>
+				<Link href={"/login"}><button>Login</button></Link>
 			</nav>
 
 			<main className={styles.main}>
@@ -14,7 +15,8 @@ export default function Landing() {
 					<h1>Parley</h1>
 					<h3>Real-time chat application</h3>
 					<p>For everyday use and everyone</p>
-					<button className={styles.button}>Get started</button>
+					<Link href={"/register"}><button className={styles.button}>Get started</button></Link>
+					<Link href={"#advantages"}><button className={styles.button}>Learn more</button></Link>
 				</aside>
 
 				<div className={styles.image}>
