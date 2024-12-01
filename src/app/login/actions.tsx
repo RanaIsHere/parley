@@ -1,7 +1,9 @@
 "use server";
 
-import comparePassword, { FormState } from "@/lib/auth";
-import mongoose from "mongoose";
+import { comparePassword, FormState } from "@/app/lib/auth";
+import { createSession } from "@/app/lib/session";
+import accountModel from "@/models/account";
+import connectDB from "@/app/lib/database";
 
 export async function login(_state: FormState, payload: FormData) {
     const email = payload.get("email");
@@ -16,7 +18,9 @@ export async function login(_state: FormState, payload: FormData) {
         } as FormState;
     }
 
-    const existingAccount = await mongoose.model('Account').findOne({ email });
+    await connectDB();
+
+    const existingAccount = await accountModel.findOne({ email });
     if (!existingAccount) {
         return {
             errors: {
@@ -25,7 +29,7 @@ export async function login(_state: FormState, payload: FormData) {
         } as FormState;
     }
 
-    const passwordMatch = await comparePassword(password, existingAccount.password);
+    const passwordMatch = await comparePassword(password.toString(), existingAccount.password);
 
     if (!passwordMatch) {
         return {
@@ -34,4 +38,6 @@ export async function login(_state: FormState, payload: FormData) {
             },
         } as FormState;
     }
+
+    await createSession(existingAccount._id);
 }

@@ -9,14 +9,14 @@ export const AuthFormSchema = z.object({
         .trim(),
 });
 
-export default function comparePassword(password: string, hash: string) {
-    return bcrypt.compare(password, hash);
-}
-
 export type FormState = | {
     errors?: {
         email?: string[]
         password?: string[]
     }
     message?: string
-} | undefined
+} | undefined | null;
+
+export async function comparePassword(password: string, hash: string) {
+    return await bcrypt.compare(password, hash);
+}

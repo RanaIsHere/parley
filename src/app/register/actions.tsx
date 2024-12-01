@@ -1,9 +1,9 @@
 "use server";
 
-import { AuthFormSchema, FormState } from "@/lib/auth";
-import connectDB from "@/lib/database";
+import { AuthFormSchema, FormState } from "@/app/lib/auth";
+import accountModel from "@/models/account";
+import connectDB from "@/app/lib/database";
 import bcrypt from "bcrypt";
-import mongoose from "mongoose";
 
 export async function register(_state: FormState, payload: FormData) {
     const data = AuthFormSchema.safeParse({
@@ -22,7 +22,7 @@ export async function register(_state: FormState, payload: FormData) {
 
     await connectDB();
 
-    const existingAccount = await mongoose.model('Account').findOne({ email });
+    const existingAccount = await accountModel.findOne({ email });
     if (existingAccount) {
         return {
             errors: {
@@ -31,7 +31,8 @@ export async function register(_state: FormState, payload: FormData) {
         } as FormState;
     }
 
-    const account = await mongoose.model('Account').create({
+    const account = await accountModel.create({
+        username: email.split('@')[0],
         email,
         password: encryptedPassword,
     });
