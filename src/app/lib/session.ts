@@ -13,7 +13,8 @@ const cookie = {
         path: '/',
         sameSite: false
     },
-    duration: 24 * 60 * 60 * 2
+    // millisecond
+    duration: 604800000
 };
 
 

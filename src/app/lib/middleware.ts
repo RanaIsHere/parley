@@ -1,6 +1,5 @@
+import { NextResponse, NextRequest } from "next/server";
 import { cookies } from "next/headers";
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
 import { decryptToken } from "./session";
 
 const authorizedRoutes = ['/chat'];
@@ -22,4 +21,8 @@ export async function middleware(request: NextRequest) {
     }
 
     return NextResponse.next();
+}
+
+export const config = {
+    matcher: ['/((?!api|_next/static|_next/image|.*\\.png$).*)'],
 }
