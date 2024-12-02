@@ -1,0 +1,30 @@
+.chat {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background-color: var(--background);
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    background-color: var(--foreground);
+}
+
+.contacts aside {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--foreground-darker);
+    padding: 2rem;
+}
+
+.contacts aside p {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+}

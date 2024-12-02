@@ -10,7 +10,7 @@ export default function Register() {
 
     return (
         <div className={styles.page}>
-            <Link href={"/"}><button className={styles.buttonGlobal}>Back</button></Link>
+            <Link href={"/"}><button className='buttonGlobal'>Back</button></Link>
 
             <section className={styles.section}>
                 <aside>
@@ -37,11 +37,11 @@ export default function Register() {
                             </div>
                         )
                     }
-                    <button disabled={pending} className={styles.button} type="submit">{pending ? "Registering..." : "Register"}</button>
+                    <button disabled={pending} className='button' type="submit">{pending ? "Registering..." : "Register"}</button>
 
                 </form>
 
-                <Link href={"/login"}><button className={styles.button}>Login</button></Link>
+                <Link href={"/login"}><button className='button'>Login</button></Link>
             </section>
         </div >
     );

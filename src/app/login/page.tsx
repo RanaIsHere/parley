@@ -10,7 +10,7 @@ export default function Login() {
 
     return (
         <div className={styles.page}>
-            <Link href={"/"}><button className={styles.buttonGlobal}>Back</button></Link>
+            <Link href={"/"}><button className='buttonGlobal'>Back</button></Link>
 
             <section className={styles.section}>
                 <aside>
@@ -28,10 +28,10 @@ export default function Login() {
                     {state?.errors?.password && <p className={styles.error}>{state.errors.password}</p>}
 
 
-                    <button disabled={pending} className={styles.button} type="submit">Login</button>
+                    <button disabled={pending} className='button' type="submit">Login</button>
                 </form>
 
-                <Link href={"/register"}><button className={styles.button}>Register</button></Link>
+                <Link href={"/register"}><button className='button'>Register</button></Link>
             </section>
         </div >
     );
