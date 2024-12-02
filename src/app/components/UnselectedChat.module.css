@@ -1,0 +1,32 @@
+.unselectedChat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    height: 100svh;
+    background-image: linear-gradient(to bottom, var(--background), #e6e6e6);
+}
+
+.unselectedChat p:first-child {
+    color: var(--foreground);
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+}
+
+.unselectedChat p:nth-child(2) {
+    color: var(--foreground);
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+}
+
+.unselectedChat p:nth-child(3) {
+    color: black;
+    margin: 0;
+    font-size: 1.2rem;
+}

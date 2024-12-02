@@ -1,0 +1,19 @@
+.profileDescriptor {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.profileDescriptorCentered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profileDescriptorCentered,
+.profileDescriptor p {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+}

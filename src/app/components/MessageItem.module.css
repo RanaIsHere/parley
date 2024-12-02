@@ -1,0 +1,14 @@
+.messageItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: black;
+    padding: 1rem;
+    margin: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.messageItem:hover {
+    background-color: rgb(237, 237, 237);
+}

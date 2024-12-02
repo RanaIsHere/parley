@@ -1,7 +1,10 @@
+import styles from './ContactItem.module.css';
+
 export default function ContactItem() {
     return (
-        <div className="contact-item">
-
+        <div role='listitem' className={styles.contactItem}>
+            <p>User Name</p>
+            <p>Status</p>
         </div>
     );
 }

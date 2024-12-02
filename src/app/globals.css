@@ -1,7 +1,10 @@
 :root {
   --background: #f4fff0;
   --foreground: #5ab638;
-  --foreground-darker: #3b7c1f;
+  --foreground-darker: #4fa430;
+
+  --action-button-color: #3b7c1f;
+  --action-button-hover: #488a2b;
 }
 
 html,
@@ -74,6 +77,24 @@ a {
   cursor: not-allowed;
   background-color: #4e753e;
 }
+
+.iconButton {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.2rem;
+}
+
+.iconButton:hover {
+  background-color: var(--action-button-hover);
+}
+
+.iconButton:active {
+  outline: 1px solid whitesmoke;
+}
+
 
 @media (prefers-color-scheme: dark) {
   html {

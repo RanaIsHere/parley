@@ -13,18 +13,19 @@
     background-color: var(--foreground);
 }
 
-.contacts aside {
+.profileActions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.profileInfo {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     background-color: var(--foreground-darker);
     padding: 2rem;
-}
-
-.contacts aside p {
-    margin: 0;
-    font-size: 1.3rem;
-    font-weight: 500;
-    letter-spacing: 0.1rem;
+    border-top: 1px solid forestgreen;
 }

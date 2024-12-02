@@ -1,0 +1,23 @@
+.contactItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--action-button-color);
+    padding: 2rem;
+    margin: 0.5rem;
+    border-radius: 1rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.contactItem:hover {
+    background-color: var(--action-button-hover);
+    outline: 1px solid whitesmoke;
+    cursor: pointer;
+}
+
+.contactItem p:first-child {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+}

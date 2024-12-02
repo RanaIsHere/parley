@@ -3,47 +3,36 @@
 import styles from './page.module.css';
 import { logout } from './actions';
 import MessageWindow from '@/app/components/MessageWindow';
+import UnselectedChat from '../components/UnselectedChat';
 import ProfileDescriptor from '../components/ProfileDescriptor';
+import ContactItem from '../components/ContactItem';
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { FaUserPlus, FaCog, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
 export default function Chat() {
     return (
         <div className={styles.chat}>
             <section className={styles.contacts}>
-                <ul>
-                    <li>
-                        <p>John Doe</p>
-                        <p>Online</p>
-                    </li>
-                    <li>
-                        <p>Smith Doe</p>
-                        <p>Online</p>
-                    </li>
-                    <li>
-                        <p>Lena Doe</p>
-                        <p>Online</p>
-                    </li>
-                    <li>
-                        <p>Mark Doe</p>
-                        <p>Online</p>
-                    </li>
-                    <li>
-                        <p>Jon Doe</p>
-                        <p>Online</p>
-                    </li>
-                    <li>
-                        <p>Jane Doe</p>
-                        <p>Online</p>
-                    </li>
-                </ul>
+                <div className="contact-list" role='list'>
+                    <ContactItem />
+                </div>
 
-                <aside className='profile-info'>
-                    <ProfileDescriptor centered={false} />
+                <aside className={styles.profileInfo}>
+                    <ProfileDescriptor centered={true} />
 
-                    <form action={logout}><button type='submit'>Logout</button></form>
+                    <div className={styles.profileActions}>
+                        <button className='iconButton'><FaVolumeMute size={32} /></button>
+
+                        <button className='iconButton'><FaUserPlus size={32} /></button>
+
+                        <button onClick={logout} className='iconButton' type='submit'><FaCog size={32} /></button>
+                    </div>
                 </aside>
             </section>
 
-            <MessageWindow />
-        </div>
+            <UnselectedChat />
+            {/* <MessageWindow /> */}
+        </div >
     );
 }
