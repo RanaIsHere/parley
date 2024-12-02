@@ -20,9 +20,14 @@ export const getUserAccount = cache(async () => {
     await connectDB();
 
     const account = await accountModel.findOne({ _id: session.id });
-    const user = account[0];
 
-    const filteredData = Object.fromEntries(Object.entries(user).filter(([key]) => key !== "password"));
+    if (!account) return null;
+
+    const filteredData = {
+        username: account.username,
+        email: account.email,
+        contacts: account.contacts
+    };
 
     return filteredData;
 })

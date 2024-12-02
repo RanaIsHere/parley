@@ -3,12 +3,13 @@ import { sendMessage } from '@/app/chat/actions';
 import MessageItem from './MessageItem';
 import { FaBars, FaAngleRight } from "react-icons/fa";
 import ProfileDescriptor from './ProfileDescriptor';
+import { useUser } from '../providers/UserContext';
 
-export default function MessageWindow() {
+export default function MessageWindow(props: { username: string }) {
     return (
         <main className={styles.messageWindow}>
             <div className={styles.actions}>
-                <ProfileDescriptor centered={false} />
+                <ProfileDescriptor name={props.username} centered={false} />
                 <button className='iconButton'><FaBars size={32} /></button>
             </div>
 

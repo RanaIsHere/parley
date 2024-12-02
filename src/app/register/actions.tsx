@@ -37,9 +37,7 @@ export async function register(_state: FormState, payload: FormData) {
         password: encryptedPassword,
     });
 
-    const user = account[0];
-
-    if (!user) {
+    if (!account) {
         return {
             errors: {
                 message: "An error occured while creating your account.",

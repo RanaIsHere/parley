@@ -29,6 +29,7 @@ export async function encryptToken(payload: SessionPayload) {
 export async function decryptToken(session: string) {
     try {
         const { payload } = await jwtVerify(session, token, { algorithms: ["HS256"] });
+
         return payload;
     } catch (e) {
         console.log(e);
