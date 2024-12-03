@@ -38,7 +38,7 @@
 }
 
 .messageForm input::placeholder {
-    color: #409023;
+    color: var(--placeholder-color);
 }
 
 .messageForm input:focus {

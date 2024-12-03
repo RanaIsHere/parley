@@ -29,3 +29,38 @@
     padding: 2rem;
     border-top: 1px solid forestgreen;
 }
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.form label {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--foreground);
+}
+
+.form input {
+    background-color: var(--foreground);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form input::placeholder {
+    color: var(--placeholder-color);
+}
+
+.form input:focus {
+    background-color: var(--foreground);
+    outline: 1px solid forestgreen;
+}
+
+.form button {
+    width: 100%;
+    background-color: var(--foreground)
+}

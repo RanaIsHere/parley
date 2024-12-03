@@ -1,11 +1,11 @@
 'use client'
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { fetchAccountData } from '../chat/actions';
 
 const UserContext = createContext(null);
 
-export const UserProvider = ({ children }) => {
+export const UserProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
